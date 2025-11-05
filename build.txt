@@ -1,0 +1,4 @@
+displayName = Damage Editor
+author = AgentCubed
+version = 0.2
+side = Both

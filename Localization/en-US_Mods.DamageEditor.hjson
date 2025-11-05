@@ -1,0 +1,29 @@
+Configs: {
+	DamageEditorConfig: {
+		DisplayName: Server Config
+
+		DealDamage: {
+			Label: "[i:6] Deal Damage Modifier"
+			Tooltip:
+				'''
+				Modifies damage dealt to NPCs (multiplier = 1.2^x)
+				'''
+		}
+
+		TakeDamage: {
+			Label: "[i:29] Take Damage Modifier"
+			Tooltip:
+				'''
+				Modifies damage taken from NPCs and projectiles (multiplier = 1.2^x)
+				'''
+		}
+
+		Boss: {
+			Label: "[i:1274] Boss"
+			ExpectedTotalMinutes: {
+				Label: "[i:889] Expected Total Minutes"
+				Tooltip: "The total minutes you expect the boss fight to last."
+			}
+		}
+	}
+}

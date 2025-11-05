@@ -1,0 +1,11 @@
+Take control of your Terraria boss fights and gameplay balance! DamageEditor lets you adjust how much damage you deal and take, right from chat commands or the mod's config. Want a tougher challenge or a more relaxed experience? Change damage multipliers on the fly, and even set how long boss battles should last for a perfectly paced fight.
+
+Every time you die to a boss, the boss gets stronger, keeping things fresh and exciting. Perfect for multiplayer servers, challenge runs, or just tweaking the game to your liking. No reloads needed—changes apply instantly!
+
+Features:
+- Change damage dealt and taken with /deal and /take commands
+- Configure boss fight pacing and difficulty
+- Bosses get stronger when players die
+- All settings are server-side and multiplayer-friendly
+
+Make Terraria your own, one hit at a time!
