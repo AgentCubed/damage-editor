@@ -1,4 +1,4 @@
 displayName = Damage Editor
 author = AgentCubed
-version = 0.2
+version = 0.6
 side = Both

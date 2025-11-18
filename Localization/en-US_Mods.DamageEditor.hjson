@@ -4,26 +4,246 @@ Configs: {
 
 		DealDamage: {
 			Label: "[i:6] Deal Damage Modifier"
-			Tooltip:
-				'''
-				Modifies damage dealt to NPCs (multiplier = 1.2^x)
-				'''
+			Tooltip: Modifies damage dealt to NPCs (multiplier = 1.2^x)
 		}
 
 		TakeDamage: {
 			Label: "[i:29] Take Damage Modifier"
-			Tooltip:
-				'''
-				Modifies damage taken from NPCs and projectiles (multiplier = 1.2^x)
-				'''
+			Tooltip: Modifies damage taken from NPCs and projectiles (multiplier = 1.2^x)
 		}
 
 		Boss: {
 			Label: "[i:1274] Boss"
+
 			ExpectedTotalMinutes: {
 				Label: "[i:889] Expected Total Minutes"
-				Tooltip: "The total minutes you expect the boss fight to last."
+				Tooltip: The total minutes you expect the boss fight to last.
+			}
+
+			TargetHighestHealth: {
+				Label: "[i:29] Target Highest Health Player"
+				Tooltip:
+					'''
+					When enabled, bosses will prioritize targeting the player with the highest current health.
+					Checks within 300 blocks first, then within 500 blocks if no players are nearby.
+					'''
+			}
+
+			Tooltip: ""
+
+			WeaponAdaptationMaxReduction: {
+				Tooltip: ""
+				Label: Weapon Adaptation Max Reduction
+			}
+
+			WeaponAdaptationMinDamage: {
+				Tooltip: ""
+				Label: Weapon Adaptation Min Damage
+			}
+
+			WeaponAdaptationCompleteMultiplier: {
+				Tooltip: ""
+				Label: Weapon Adaptation Complete Multiplier
+			}
+
+			WeaponAdaptationStartMultiplier: {
+				Tooltip: ""
+				Label: Weapon Adaptation Start Multiplier
+			}
+
+			WeaponAdaptation: {
+				Tooltip: ""
+				Label: Weapon Adaptation Enabled
 			}
 		}
+
+		WeaponAdaptation: {
+			Label: Weapon Adaptation
+			Tooltip: When enabled, bosses can adapt to weapons that deal disproportionately high damage.
+		}
+
+		WeaponAdaptationStartMultiplier: {
+			Label: Start Multiplier
+			Tooltip: Begin warnings when the top weapon's share is this many times the average.
+		}
+
+		WeaponAdaptationCompleteMultiplier: {
+			Label: Complete Multiplier
+			Tooltip: Trigger adaptation when the top weapon's share exceeds this many times the average.
+		}
+
+		WeaponAdaptationMinDamage: {
+			Label: Minimum Damage
+			Tooltip: Minimum total boss damage from a weapon to be considered for adaptation (ignores tiny contributors).
+		}
+
+		WeaponAdaptationMaxReduction: {
+			Label: Max Reduction
+			Tooltip: Minimum allowed final damage factor applied to an adapted weapon (e.g., 0.5 prevents reduction below 50% damage).
+		}
+
+		Events: {
+			Label: "[i:521] Events"
+
+			AvgMinutesBetweenEvents: {
+				Label: "[i:575] Average Minutes Between Events"
+				Tooltip: Average minutes between random events.
+			}
+
+			EventDurationMinutes: {
+				Label: "[i:73] Event Duration (Minutes)"
+				Tooltip: Duration of events in minutes.
+			}
+
+			BlacklistedBiomes: {
+				Label: "[i:650] Blacklisted Biomes"
+				Tooltip: List of biomes that events cannot occur in.
+			}
+
+			FishingHotspot: {
+				Label: "[i:4099] Fishing Hotspot"
+
+				FishingPowerBonus: {
+					Label: "[i:2385] Fishing Power Bonus"
+					Tooltip: Bonus fishing power during the event.
+				}
+
+				FishingPowerMultiplier: {
+					Label: "[i:3192] Fishing Power Multiplier"
+					Tooltip: Multiplier for fishing power.
+				}
+
+				LootMultiplier: {
+					Label: "[i:3460] Loot Multiplier"
+					Tooltip: Multiplier for fishing loot stack size.
+				}
+			}
+
+			MobTakeover: {
+				Label: "[i:2996] Mob Takeover"
+
+				SpawnRateMultiplier: {
+					Label: "[i:23] Spawn Rate Multiplier"
+					Tooltip: Multiplier for spawn rate (higher = more frequent spawns).
+				}
+
+				MaxSpawnsMultiplier: {
+					Label: "[i:24] Max Spawns Multiplier"
+					Tooltip: Multiplier for maximum spawns.
+				}
+
+				LuckBonus: {
+					Label: "[i:74] Luck Bonus"
+					Tooltip: Bonus luck value added during the event.
+				}
+			}
+
+			DebugMode: {
+				Label: Debug Mode
+				Tooltip: ""
+			}
+
+			Tooltip: ""
+		}
+
+		PlayerOverrides: {
+			Label: Player Overrides
+			Tooltip: ""
+		}
+
+		StrongerReforges: {
+			Tweaks.Label: Stronger Reforges Tweaks
+
+			WardingDamagePercent: {
+				Label: Warding Damage Percent
+				Tooltip: Percentage change in damage while a Warding-prefixed accessory is equipped (negative = damage reduction).
+			}
+
+			ReplaceWardingMoveSpeedWithDamage: {
+				Label: Replace Warding Move Speed with Damage
+				Tooltip: If enabled, the Warding prefix will stop applying movement penalty and instead apply the damage change specified above.
+			}
+
+			AllrounderRebalance.Label: Allrounder Rebalance
+
+			AllrounderDefense: {
+				Label: Allrounder Defense
+				Tooltip: Desired total defense granted by the Allrounder prefix. DamageEditor will adjust to reach this value.
+			}
+		}
+
+		GlobalArmor: {
+			FlatDefenseIncrease: {
+				Label: Flat Armor Defense Increase
+				Tooltip: Adds a flat defense bonus to all equipped armor pieces (head/body/legs and any item granting defense).
+			}
+		}
+
+		AllrounderRebalanceEnabled.Tooltip: ""
+		StrongerReforgesTweaksEnabled.Tooltip: ""
+	}
+
+	// DamageEditorConfig ends
+	
+	Boss: {
+		Adaptation: {
+			Begin: "{0} is beginning to adapt to {1}..."
+			Success: "{0} has successfully adapted to {1}!"
+		}
+	}
+
+	BossSettings.Tooltip: ""
+
+	// BossSettings.Tooltip ends
+	
+	PlayerTuningConfig: {
+		Tooltip: ""
+
+		DealDamageModifierDifference: {
+			Label: Deal Damage Modifier Difference
+			Tooltip: ""
+		}
+
+		TakeDamageModifierDifference: {
+			Label: Take Damage Modifier Difference
+			Tooltip: ""
+		}
+
+		SkilledMode: {
+			Label: Skilled Mode
+			Tooltip: ""
+		}
+	}
+
+	// PlayerTuningConfig ends
+	
+	EventsSettings: {
+		Tooltip: ""
+		FishingHotspot.Tooltip: ""
+		MobTakeover.Tooltip: ""
+	}
+
+	// EventsSettings ends
+	
+	FishingHotspotSettings.Tooltip: ""
+	// FishingHotspotSettings.Tooltip ends
+	MobTakeoverSettings.Tooltip: ""
+}
+
+// Configs block ends
+
+Events: {
+	Event: {
+		Start: "{0} has begun in the {1}!"
+		End: "{0} in the {1} has ended!"
+	}
+
+	FishingHotspot.Start: "Fish are swarming! Fishing power and loot increased!"
+
+	// FishingHotspot ends
+	
+	BingoEvent: {
+		Start: "{0} has begun in the {1}!"
+		End: "{0} in the {1} has ended!"
 	}
 }
